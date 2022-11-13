@@ -41,7 +41,7 @@ export class LoginAdminComponent implements OnInit {
         this.userInfo = this.loginResponse.result;
         localStorage.setItem("token", this.userInfo.id);
         localStorage.setItem("user", "admin");
-        //this.router.navigate(['homeAdmin']);
+        this.router.navigate(['homeAdmin']);
       }else{
         this.errorStatus= true;
         this.errorMsj = "Credenciales invalidas";

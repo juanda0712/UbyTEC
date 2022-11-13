@@ -1,5 +1,10 @@
-.button{
+.cardBackground{
+    width: 20rem;
     background-color: #bae8db;
+}
+
+.button{
+    background-color: #e3f2fd;
 }
 .button:active {
     background-color: #ffffff;
