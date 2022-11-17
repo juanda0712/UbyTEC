@@ -1,0 +1,29 @@
+<app-header></app-header>
+
+<div class="container">
+  <h3>Lista de Empleados</h3>
+  <br />
+  <button type="button" class="btn btn-primary" (click)="newEmployee()">
+    Nuevo Empleado
+  </button>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre Completo</th>
+        <th scope="col">Nombre Usuario</th>
+      </tr>
+    </thead>
+    <tbody>
+      <p>{{ error_msg }}</p>
+      <tr
+        *ngFor="let employee of employees"
+        (click)="viewEmployee(employee.ID)"
+      >
+        <th scope="row">{{ employee.ID }}</th>
+        <td>{{ employee.Full_name }}</td>
+        <td>{{ employee.Username }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -26,8 +26,8 @@ export class LoginAdminComponent implements OnInit {
 
   constructor(private api: LoginService, private router:Router, private fb: FormBuilder) { 
     this.loginForm = this.fb.group({
-      user: ['', Validators.required],
-      password: ['', Validators.required]
+      Username: ['', Validators.required],
+      Password: ['', Validators.required]
     })
   }
 
@@ -35,11 +35,11 @@ export class LoginAdminComponent implements OnInit {
   }
 
   onLogin(form:LoginI){
-    this.api.login(form, 'loginAdmin').subscribe(data => {
+    this.api.getTest().subscribe(data => {
       this.loginResponse = data;
       if(this.loginResponse.status == "ok"){
         this.userInfo = this.loginResponse.result;
-        localStorage.setItem("token", this.userInfo.id);
+        localStorage.setItem("token", this.userInfo.ID);
         localStorage.setItem("user", "admin");
         this.router.navigate(['homeAdmin']);
       }else{

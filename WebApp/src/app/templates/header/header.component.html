@@ -1,17 +1,66 @@
-<nav class="navbar sticky-top navbar-light" style="background-color: #e3f2fd">
-  <div class="container-fluid">
-    <a class="navbar-brand" routerLink="/---------">
-      <img
-        src="assets/images/UbyTEC.svg"
-        alt=""
-        width="70"
-        height="70"
-        class="me-2"
-      />
-      <span style="font-size: x-large">UbyTEC</span>
-    </a>
-    <div>
-      <a routerLink="/-------" class="btn button">BOTTOM</a>
+<div *ngIf="userSection == 'admin'; else elseBlock">
+  <nav class="navbar sticky-top navbar-light" style="background-color: #e3f2fd">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/homeAdmin">
+        <img
+          src="assets/images/UbyTEC.svg"
+          alt=""
+          width="70"
+          height="70"
+          class="me-2"
+        />
+        <span style="font-size: x-large">UbyTEC</span>
+      </a>
+      <div>
+        <a routerLink="/-------" class="btn button">BOTTOM</a>
+      </div>
     </div>
+  </nav>
+</div>
+
+<ng-template #elseBlock>
+  <div *ngIf="userSection == 'restaurant'; else elseBlock2">
+    <nav
+      class="navbar sticky-top navbar-light"
+      style="background-color: #e3f2fd"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" routerLink="/homeRestaurant">
+          <img
+            src="assets/images/UbyTEC.svg"
+            alt=""
+            width="70"
+            height="70"
+            class="me-2"
+          />
+          <span style="font-size: x-large">UbyTEC</span>
+        </a>
+        <div>
+          <a routerLink="/-------" class="btn button">BOTTOM</a>
+        </div>
+      </div>
+    </nav>
   </div>
-</nav>
+  <ng-template #elseBlock2>
+    <nav
+      class="navbar sticky-top navbar-light"
+      style="background-color: #e3f2fd"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" routerLink="/homeClient">
+          <img
+            src="assets/images/UbyTEC.svg"
+            alt=""
+            width="70"
+            height="70"
+            class="me-2"
+          />
+          <span style="font-size: x-large">UbyTEC</span>
+        </a>
+        <div>
+          <a routerLink="/-------" class="btn button">BOTTOM</a>
+        </div>
+      </div>
+    </nav>
+  </ng-template>
+</ng-template>

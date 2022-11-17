@@ -10,6 +10,7 @@ export class HomeAdminComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log(localStorage.getItem('user'))
   }
 
 }

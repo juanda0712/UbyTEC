@@ -1,0 +1,61 @@
+<app-header></app-header>
+<div class="container">
+  <div class="form-group row">
+    <div class="col">
+      <label for="exampleFormControlInput1">Nombre Completo</label>
+      <br />
+      <label for="exampleFormControlInput1">{{ employeeInfo.Full_name }}</label>
+    </div>
+    <div class="col">
+      <label for="exampleFormControlInput1">Usuario</label>
+      <br />
+      <label for="exampleFormControlInput1">{{ employeeInfo.Username }}</label>
+    </div>
+    <div class="col">
+      <label for="exampleFormControlInput1">ID</label>
+      <br />
+      <label for="exampleFormControlInput1">{{ employeeInfo.ID }}</label>
+    </div>
+  </div>
+  <br /><br />
+  <div class="form-group row">
+    <div class="col">
+      <label for="exampleFormControlInput1">Provincia</label>
+      <br />
+      <label for="exampleFormControlInput1">{{ employeeInfo.Province }}</label>
+    </div>
+    <div class="col">
+      <label for="exampleFormControlInput1">Canton</label>
+      <br />
+      <label for="exampleFormControlInput1">{{ employeeInfo.Canton }}</label>
+    </div>
+    <div class="col">
+      <label for="exampleFormControlInput1">Distrito</label>
+      <br />
+      <label for="exampleFormControlInput1">{{ employeeInfo.District }}</label>
+    </div>
+  </div>
+  <br /><br />
+  <div class="form-group row">
+    <div class="col">
+      <label for="exampleFormControlInput1">Contraseña</label>
+      <br />
+      <label for="exampleFormControlInput1">{{ employeeInfo.Password }}</label>
+    </div>
+    <div class="col">
+      <label for="exampleFormControlInput1">Telefonos</label>
+      <br />
+      <tr *ngFor="let phonenumber of employeeInfo.Phone_number">
+        <td>{{ phonenumber }}</td>
+      </tr>
+    </div>
+  </div>
+  <br />
+  <button type="button" class="btn btn-secondary" (click)="edit()">
+    Editar
+  </button>
+  <button type="button" class="btn btn-danger" (click)="delete()">
+    Eliminar
+  </button>
+  <button type="button" class="btn btn-dark" (click)="exit()">Salir</button>
+</div>

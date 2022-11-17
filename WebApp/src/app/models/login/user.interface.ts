@@ -1,3 +1,3 @@
 export interface UserI{
-    id:string
+    ID:string
 }

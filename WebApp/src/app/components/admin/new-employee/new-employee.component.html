@@ -1,0 +1,109 @@
+<app-header></app-header>
+
+<div class="container">
+  <form [formGroup]="newForm" (ngSubmit)="postForm(newForm.value)">
+    <div class="form-group row">
+      <div class="col">
+        <label for="exampleFormControlInput1">Nombre Completo</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Nombre Completo"
+          formControlName="Full_name"
+        />
+      </div>
+      <div class="col">
+        <label for="exampleFormControlInput1">Usuario</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Usuario"
+          formControlName="Username"
+        />
+      </div>
+      <div class="col">
+        <label for="exampleFormControlInput1">Contraseña</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Contraseña"
+          formControlName="Password"
+        />
+      </div>
+    </div>
+    <br /><br />
+    <div class="form-group row">
+      <div class="col">
+        <label for="exampleFormControlInput1">Provincia</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Provincia"
+          formControlName="Province"
+        />
+      </div>
+      <div class="col">
+        <label for="exampleFormControlInput1">canton</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="canton"
+          formControlName="Canton"
+        />
+      </div>
+      <div class="col">
+        <label for="exampleFormControlInput1">Distrito</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Distrito"
+          formControlName="District"
+        />
+      </div>
+    </div>
+    <br /><br />
+    <div class="form-group row">
+      <div class="col">
+        <label for="exampleFormControlInput1">Telefonos:</label>
+        <br />
+        <label for="exampleFormControlInput1">{{
+          newForm.value.Phone_number
+        }}</label>
+      </div>
+      <div class="col">
+        <label for="exampleFormControlInput1">ID</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="ID"
+          formControlName="ID"
+        />
+      </div>
+    </div>
+    <br />
+    <div class="form-group row">
+      <form [formGroup]="numberForm">
+        <div class="col">
+          <label for="exampleFormControlInput1">Numero</label>
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Numero"
+            formControlName="number"
+          />
+        </div>
+        <button
+          type="button"
+          class="btn btn-dark"
+          (click)="addItem(numberForm.value.number)"
+        >
+          Agregar
+        </button>
+      </form>
+    </div>
+
+    <br /><br />
+    <button type="submit" class="btn btn-primary">Crear</button>
+    <button type="button" class="btn btn-dark" (click)="exit()">Salir</button>
+  </form>
+</div>
