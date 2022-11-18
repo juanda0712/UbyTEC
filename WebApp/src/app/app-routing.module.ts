@@ -6,6 +6,10 @@ import { EmployeesComponent } from './components/admin/employees/employees.compo
 import { ViewEmployeeComponent } from './components/admin/view-employee/view-employee.component';
 import { EditEmployeeComponent } from './components/admin/edit-employee/edit-employee.component';
 import { NewEmployeeComponent } from './components/admin/new-employee/new-employee.component';
+import { RestaurantsComponent } from './components/admin/restaurants/restaurants.component';
+import { ViewRestaurantComponent } from './components/admin/view-restaurant/view-restaurant.component';
+import { EditRestaurantComponent } from './components/admin/edit-restaurant/edit-restaurant.component';
+import { NewRestaurantComponent } from './components/admin/new-restaurant/new-restaurant.component';
 
 const routes: Routes = [
   {path:'loginAdmin',component:LoginAdminComponent},
@@ -13,7 +17,11 @@ const routes: Routes = [
   {path:'employees',component:EmployeesComponent},
   {path:'viewEmployee/:id',component:ViewEmployeeComponent},
   {path:'editEmployee/:id',component:EditEmployeeComponent},
-  {path:'newEmployee',component:NewEmployeeComponent}
+  {path:'newEmployee',component:NewEmployeeComponent},
+  {path:'restaurants',component:RestaurantsComponent},
+  {path:'viewRestaurant/:id',component:ViewRestaurantComponent},
+  {path:'editRestaurant/:id',component:EditRestaurantComponent},
+  {path:'newRestaurant',component:NewRestaurantComponent},
 ];
 
 @NgModule({
@@ -22,4 +30,5 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 export const routingComponents = [LoginAdminComponent, HomeAdminComponent,EmployeesComponent,ViewEmployeeComponent,
-  EditEmployeeComponent,NewEmployeeComponent]
+  EditEmployeeComponent,NewEmployeeComponent,RestaurantsComponent,ViewRestaurantComponent,EditRestaurantComponent,
+  NewRestaurantComponent]

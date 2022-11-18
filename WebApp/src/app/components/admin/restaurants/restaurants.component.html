@@ -1,0 +1,24 @@
+<app-header></app-header>
+
+<div class="container">
+  <h3>Lista de Restaurantes</h3>
+  <br />
+  <button type="button" class="btn btn-primary" (click)="newRestaurant()">
+    Nuevo Restaurante
+  </button>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre Restaurante</th>
+      </tr>
+    </thead>
+    <tbody>
+      <p>{{ error_msg }}</p>
+      <tr *ngFor="let single of info" (click)="viewRestaurant(single.ID)">
+        <th scope="row">{{ single.ID }}</th>
+        <td>{{ single.Business_name }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

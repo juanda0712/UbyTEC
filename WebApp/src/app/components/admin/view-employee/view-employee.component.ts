@@ -16,6 +16,7 @@ export class ViewEmployeeComponent implements OnInit {
     private api:EmployeesService) { }
 
   employeeResponse:ResponseI;
+  deletedResponse:ResponseI
   employeeInfo:EmployeeI;
   employeeRequest:EmployeeRequestI;
 
@@ -40,7 +41,15 @@ export class ViewEmployeeComponent implements OnInit {
   }
 
   delete(){
-    this.api.deleteEmployee(this.employeeRequest)
+    this.api.deleteEmployee(this.employeeRequest).subscribe(data => {
+      this.deletedResponse = data;
+      if(this.deletedResponse.status == 'ok'){
+        alert('Empleado eliminado correctamente')
+      }else{
+        alert('No se pudo eleminar el empleado')
+      }
+
+    })
     this.exit()
   }
 

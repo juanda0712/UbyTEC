@@ -121,15 +121,15 @@ export class EditEmployeeComponent implements OnInit {
   removeOldItem(value: number) {
     let  updatedPhones = this.editForm.value.Old_phone_number.filter((item:any) => item !== value) 
     this.editForm.setValue({
-      'ID' : this.employeeInfo.ID,
-      'Full_name': this.employeeInfo.Full_name,
-      'Province': this.employeeInfo.Province,
-      'Canton': this.employeeInfo.Canton,
-      'District': this.employeeInfo.District,
+      'ID' : this.editForm.value.ID,
+      'Full_name': this.editForm.value.Full_name,
+      'Province': this.editForm.value.Province,
+      'Canton': this.editForm.value.Canton,
+      'District': this.editForm.value.District,
       'Old_phone_number':updatedPhones,
       'New_phone_number':this.editForm.value.New_phone_number,
-      'Username': this.employeeInfo.Username,
-      'Password':this.employeeInfo.Password
+      'Username': this.editForm.value.Username,
+      'Password':this.editForm.value.Password
     }) ;
     this.numberForm.reset()
   }

@@ -1,0 +1,74 @@
+<app-header></app-header>
+<div class="container">
+  <div class="form-group row">
+    <div class="col">
+      <label for="exampleFormControlInput1">Nombre Restaurante</label>
+      <br />
+      <label for="exampleFormControlInput1">{{ info.Business_name }}</label>
+    </div>
+    <div class="col">
+      <label for="exampleFormControlInput1">Correo</label>
+      <br />
+      <label for="exampleFormControlInput1">{{ info.Email }}</label>
+    </div>
+    <div class="col">
+      <label for="exampleFormControlInput1">ID</label>
+      <br />
+      <label for="exampleFormControlInput1">{{ info.ID }}</label>
+    </div>
+  </div>
+  <br /><br />
+  <div class="form-group row">
+    <div class="col">
+      <label for="exampleFormControlInput1">Provincia</label>
+      <br />
+      <label for="exampleFormControlInput1">{{ info.Province }}</label>
+    </div>
+    <div class="col">
+      <label for="exampleFormControlInput1">Canton</label>
+      <br />
+      <label for="exampleFormControlInput1">{{ info.Canton }}</label>
+    </div>
+    <div class="col">
+      <label for="exampleFormControlInput1">Distrito</label>
+      <br />
+      <label for="exampleFormControlInput1">{{ info.District }}</label>
+    </div>
+  </div>
+  <br /><br />
+  <div class="form-group row">
+    <div class="col">
+      <label for="exampleFormControlInput1">Dueùo</label>
+      <br />
+      <label for="exampleFormControlInput1">{{ info.Owner }}</label>
+    </div>
+    <div class="col">
+      <label for="exampleFormControlInput1">SINPE</label>
+      <br />
+      <label for="exampleFormControlInput1">{{ info.SINPE }}</label>
+    </div>
+    <div class="col">
+      <label for="exampleFormControlInput1">Tipo de restaurante</label>
+      <br />
+      <label for="exampleFormControlInput1">{{ info.Business_type }}</label>
+    </div>
+  </div>
+  <br />
+  <div class="form-group-row">
+    <div class="col">
+      <label for="exampleFormControlInput1">Telefonos</label>
+      <br />
+      <tr *ngFor="let phonenumber of info.Phone_number">
+        <td>{{ phonenumber }}</td>
+      </tr>
+    </div>
+  </div>
+  <br />
+  <button type="button" class="btn btn-secondary" (click)="edit()">
+    Editar
+  </button>
+  <button type="button" class="btn btn-danger" (click)="delete()">
+    Eliminar
+  </button>
+  <button type="button" class="btn btn-dark" (click)="exit()">Salir</button>
+</div>
