@@ -1,0 +1,26 @@
+<app-header></app-header>
+
+<div class="container">
+  <h3>Lista de Repartidores</h3>
+  <br />
+  <button type="button" class="btn btn-primary" (click)="newDriver()">
+    Nuevo Repartidor
+  </button>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre Completo</th>
+        <th scope="col">Correo Electronico</th>
+      </tr>
+    </thead>
+    <tbody>
+      <p>{{ error_msg }}</p>
+      <tr *ngFor="let driver of info" (click)="viewDriver(driver.ID)">
+        <th scope="row">{{ driver.ID }}</th>
+        <td>{{ driver.Full_name }}</td>
+        <td>{{ driver.Email }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

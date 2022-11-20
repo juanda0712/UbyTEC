@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import {EmployeeI} from '../../../models/admin/employees/employee.interface'
+import {DriversI} from '../../../models/admin/drivers/driver.interface'
 import {ResponseI} from '../../../models/response/response.interface'
-import {EmployeesService} from '../../../service/admin/employees/employees.service'
+import {DriversService} from '../../../service/admin/drivers/drivers.service'
 import {FormGroup, FormControl, FormBuilder, FormArray} from '@angular/forms'
 
 @Component({
-  selector: 'app-new-employee',
-  templateUrl: './new-employee.component.html',
-  styleUrls: ['./new-employee.component.css']
+  selector: 'app-new-driver',
+  templateUrl: './new-driver.component.html',
+  styleUrls: ['./new-driver.component.css']
 })
-export class NewEmployeeComponent implements OnInit {
+export class NewDriverComponent implements OnInit {
 
   postResponse: ResponseI
   
@@ -19,7 +19,7 @@ export class NewEmployeeComponent implements OnInit {
 
 
   constructor(private activerouter:ActivatedRoute, private router:Router,
-    private api:EmployeesService,private fb: FormBuilder) {
+    private api:DriversService,private fb: FormBuilder) {
 
 
       this.newForm = this.fb.group({
@@ -42,9 +42,8 @@ export class NewEmployeeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  postForm(form:EmployeeI){
-    
-    this.api.postEmployee(form).subscribe(data =>{
+  postForm(form:DriversI){
+    this.api.postDriver(form).subscribe(data =>{
       this.postResponse = data;
       if(this.postResponse.status == "ok"){
         alert("Empleado agregado exitosamente")
@@ -55,7 +54,7 @@ export class NewEmployeeComponent implements OnInit {
   }
 
   exit(){
-    this.router.navigate(["employees"])
+    this.router.navigate(["drivers"])
   }
 
   get itemsFormArray(): FormArray {
@@ -66,4 +65,5 @@ export class NewEmployeeComponent implements OnInit {
     this.itemsFormArray.push(new FormControl(value));
     this.numberForm.reset();
   }
+
 }

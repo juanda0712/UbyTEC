@@ -11,17 +11,17 @@ import {EmployeesService} from '../../../service/admin/employees/employees.servi
 })
 export class EmployeesComponent implements OnInit {
 
-  employeeResponse:ResponseI;
-  employees:EmployeeI[];
+  getResponse:ResponseI;
+  info:EmployeeI[];
   error_msg="";
 
   constructor(private router:Router,private api: EmployeesService) { }
 
   ngOnInit(): void {
     this.api.getAllEmployees().subscribe(data =>{
-      this.employeeResponse = data;
-      if(this.employeeResponse.status=="ok"){
-        this.employees = this.employeeResponse.result;
+      this.getResponse = data;
+      if(this.getResponse.status=="ok"){
+        this.info = this.getResponse.result;
       }else{
         this.error_msg= "No se pudieron cargar los empleados"
       }

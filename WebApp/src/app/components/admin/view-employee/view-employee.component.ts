@@ -15,20 +15,20 @@ export class ViewEmployeeComponent implements OnInit {
   constructor(private activerouter:ActivatedRoute, private router:Router,
     private api:EmployeesService) { }
 
-  employeeResponse:ResponseI;
+  getResponse:ResponseI;
   deletedResponse:ResponseI
-  employeeInfo:EmployeeI;
-  employeeRequest:EmployeeRequestI;
+  info:EmployeeI;
+  idRequest:EmployeeRequestI;
 
   ngOnInit(): void {
 
-    let workerId = this.activerouter.snapshot.paramMap.get('id');
-    this.employeeRequest = {"ID":workerId}
+    let URLId = this.activerouter.snapshot.paramMap.get('id');
+    this.idRequest = {"ID":URLId}
     
-    this.api.getEmployee(this.employeeRequest).subscribe(data =>{
-      this.employeeResponse = data;
-      if(this.employeeResponse.status == "ok"){
-        this.employeeInfo = this.employeeResponse.result;
+    this.api.getEmployee(this.idRequest).subscribe(data =>{
+      this.getResponse = data;
+      if(this.getResponse.status == "ok"){
+        this.info = this.getResponse.result;
       }else{
         alert("No se pudo cargar el empleado")
       }
@@ -41,7 +41,7 @@ export class ViewEmployeeComponent implements OnInit {
   }
 
   delete(){
-    this.api.deleteEmployee(this.employeeRequest).subscribe(data => {
+    this.api.deleteEmployee(this.idRequest).subscribe(data => {
       this.deletedResponse = data;
       if(this.deletedResponse.status == 'ok'){
         alert('Empleado eliminado correctamente')

@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './templates/header/header.component';
+import { NewDriverComponent } from './components/admin/new-driver/new-driver.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     routingComponents,
+    NewDriverComponent,
   ],
   imports: [
     BrowserModule,

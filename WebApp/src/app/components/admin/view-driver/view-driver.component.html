@@ -9,7 +9,7 @@
     <div class="col">
       <label for="exampleFormControlInput1">Usuario</label>
       <br />
-      <label for="exampleFormControlInput1">{{ info.Username }}</label>
+      <label for="exampleFormControlInput1">{{ info.State }}</label>
     </div>
     <div class="col">
       <label for="exampleFormControlInput1">ID</label>
@@ -43,14 +43,21 @@
       <label for="exampleFormControlInput1">{{ info.Password }}</label>
     </div>
     <div class="col">
-      <label for="exampleFormControlInput1">Telefonos</label>
+      <label for="exampleFormControlInput1">Correo</label>
       <br />
-      <tr *ngFor="let phonenumber of info.Phone_number">
-        <td>{{ phonenumber }}</td>
-      </tr>
+      <label for="exampleFormControlInput1">{{ info.Email }}</label>
     </div>
+    <div class="col">
+      <div class="col">
+        <label for="exampleFormControlInput1">Telefonos</label>
+        <br />
+        <tr *ngFor="let phonenumber of info.Phone_number">
+          <td>{{ phonenumber }}</td>
+        </tr>
+      </div>
+    </div>
+    <br />
   </div>
-  <br />
   <button type="button" class="btn btn-secondary" (click)="edit()">
     Editar
   </button>

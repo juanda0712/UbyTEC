@@ -16,10 +16,7 @@
     </thead>
     <tbody>
       <p>{{ error_msg }}</p>
-      <tr
-        *ngFor="let employee of employees"
-        (click)="viewEmployee(employee.ID)"
-      >
+      <tr *ngFor="let employee of info" (click)="viewEmployee(employee.ID)">
         <th scope="row">{{ employee.ID }}</th>
         <td>{{ employee.Full_name }}</td>
         <td>{{ employee.Username }}</td>
