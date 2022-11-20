@@ -10,6 +10,8 @@ import { RestaurantsComponent } from './components/admin/restaurants/restaurants
 import { ViewRestaurantComponent } from './components/admin/view-restaurant/view-restaurant.component';
 import { EditRestaurantComponent } from './components/admin/edit-restaurant/edit-restaurant.component';
 import { NewRestaurantComponent } from './components/admin/new-restaurant/new-restaurant.component';
+import { AffiliationsComponent } from './components/admin/affiliations/affiliations.component';
+
 
 const routes: Routes = [
   {path:'loginAdmin',component:LoginAdminComponent},
@@ -22,6 +24,7 @@ const routes: Routes = [
   {path:'viewRestaurant/:id',component:ViewRestaurantComponent},
   {path:'editRestaurant/:id',component:EditRestaurantComponent},
   {path:'newRestaurant',component:NewRestaurantComponent},
+  {path:'affiliations',component:AffiliationsComponent},
 ];
 
 @NgModule({
@@ -31,4 +34,4 @@ const routes: Routes = [
 export class AppRoutingModule { }
 export const routingComponents = [LoginAdminComponent, HomeAdminComponent,EmployeesComponent,ViewEmployeeComponent,
   EditEmployeeComponent,NewEmployeeComponent,RestaurantsComponent,ViewRestaurantComponent,EditRestaurantComponent,
-  NewRestaurantComponent]
+  NewRestaurantComponent,AffiliationsComponent]

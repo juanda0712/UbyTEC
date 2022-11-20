@@ -1,0 +1,25 @@
+<app-header></app-header>
+
+<div class="container">
+  <h3>Lista de Peticiones de Afiliacion</h3>
+  <br />
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre Restaurante</th>
+        <th scope="col">Tipo de Comercio</th>
+        <th scope="col">Correo Electronico</th>
+      </tr>
+    </thead>
+    <tbody>
+      <p>{{ error_msg }}</p>
+      <tr *ngFor="let restaurant of info" (click)="viewEmployee(restaurant.ID)">
+        <th scope="row">{{ restaurant.ID }}</th>
+        <td>{{ restaurant.Business_name }}</td>
+        <td>{{ restaurant.Business_type }}</td>
+        <td>{{ restaurant.Email }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
