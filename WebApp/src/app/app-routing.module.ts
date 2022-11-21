@@ -14,6 +14,10 @@ import { AffiliationsComponent } from './components/admin/affiliations/affiliati
 import { DriversComponent } from './components/admin/drivers/drivers.component';
 import { ViewDriverComponent } from './components/admin/view-driver/view-driver.component';
 import { EditDriverComponent } from './components/admin/edit-driver/edit-driver.component';
+import { NewDriverComponent } from './components/admin/new-driver/new-driver.component';
+import { ClientReportsComponent } from './components/admin/client-reports/client-reports.component';
+import { RestaurantReportsComponent } from './components/admin/restaurant-reports/restaurant-reports.component';
+
 
 const routes: Routes = [
   {path:'loginAdmin',component:LoginAdminComponent},
@@ -30,6 +34,10 @@ const routes: Routes = [
   {path:'drivers',component:DriversComponent},
   {path:'viewDriver/:id',component:ViewDriverComponent},
   {path:'editDriver/:id',component:EditDriverComponent},
+  {path:'newDriver',component:NewDriverComponent},
+  {path:'clientReports',component:ClientReportsComponent},
+  {path:'restaurantReports',component:RestaurantReportsComponent},
+  
 ];
 
 @NgModule({
@@ -39,4 +47,5 @@ const routes: Routes = [
 export class AppRoutingModule { }
 export const routingComponents = [LoginAdminComponent, HomeAdminComponent,EmployeesComponent,ViewEmployeeComponent,
   EditEmployeeComponent,NewEmployeeComponent,RestaurantsComponent,ViewRestaurantComponent,EditRestaurantComponent,
-  NewRestaurantComponent,AffiliationsComponent,DriversComponent,ViewDriverComponent,EditDriverComponent]
+  NewRestaurantComponent,AffiliationsComponent,DriversComponent,ViewDriverComponent,EditDriverComponent,
+  NewDriverComponent,ClientReportsComponent,RestaurantReportsComponent]
