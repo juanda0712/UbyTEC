@@ -9,12 +9,11 @@ import {UserI} from '../../../models/login/user.interface'
 import {ResponseI} from '../../../models/response/response.interface'
 
 @Component({
-  selector: 'app-login-admin',
-  templateUrl: './login-admin.component.html',
-  styleUrls: ['./login-admin.component.css']
+  selector: 'app-restaurant-login',
+  templateUrl: './restaurant-login.component.html',
+  styleUrls: ['./restaurant-login.component.css']
 })
-
-export class LoginAdminComponent implements OnInit {
+export class RestaurantLoginComponent implements OnInit {
 
   loginForm: FormGroup;
 
@@ -35,17 +34,18 @@ export class LoginAdminComponent implements OnInit {
   }
 
   onLogin(form:LoginI){
-    this.api.login(form,'loginEmployee').subscribe(data => {
+    this.api.login(form,'loginRestaurant').subscribe(data => {
       this.loginResponse = data;
       if(this.loginResponse.status == "ok"){
         this.userInfo = this.loginResponse.result;
         localStorage.setItem("token", this.userInfo.ID);
-        localStorage.setItem("user", "admin");
-        this.router.navigate(['homeAdmin']);
+        localStorage.setItem("user", "owner");
+        this.router.navigate(['homeRestaurant']);
       }else{
         this.errorStatus= true;
         this.errorMsj = "Credenciales invalidas";
       }
     })
   }
+
 }
