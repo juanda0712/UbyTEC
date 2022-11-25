@@ -1,0 +1,46 @@
+<app-header></app-header> <br /><br />
+<div class="container">
+  <div class="form-group row">
+    <div class="col">
+      <label for="exampleFormControlInput1">Nombre Producto</label>
+      <br />
+      <label for="exampleFormControlInput1">{{ info.Product_name }}</label>
+    </div>
+    <div class="col">
+      <label for="exampleFormControlInput1">Categoria</label>
+      <br />
+      <label for="exampleFormControlInput1">{{ info.Category }}</label>
+    </div>
+    <div class="col">
+      <label for="exampleFormControlInput1">ID</label>
+      <br />
+      <label for="exampleFormControlInput1">{{ info.ID }}</label>
+    </div>
+  </div>
+  <br /><br />
+  <div class="form-group row">
+    <div class="col">
+      <label for="exampleFormControlInput1">Precio</label>
+      <br />
+      <label for="exampleFormControlInput1">{{ info.Price }}</label>
+    </div>
+    <div class="col">
+      <label for="exampleFormControlInput1">Restaurante ID</label>
+      <br />
+      <label for="exampleFormControlInput1">{{ info.Restaurant_ID }}</label>
+    </div>
+    <div class="col">
+      <label for="exampleFormControlInput1">Imagen</label>
+      <br />
+      <label for="exampleFormControlInput1">{{ info.Image }}</label>
+    </div>
+  </div>
+  <br /><br />
+  <button type="button" class="btn btn-secondary" (click)="edit()">
+    Editar
+  </button>
+  <button type="button" class="btn btn-danger" (click)="delete()">
+    Eliminar
+  </button>
+  <button type="button" class="btn btn-dark" (click)="exit()">Salir</button>
+</div>

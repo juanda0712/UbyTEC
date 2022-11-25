@@ -19,6 +19,12 @@ import { ClientReportsComponent } from './components/admin/client-reports/client
 import { RestaurantReportsComponent } from './components/admin/restaurant-reports/restaurant-reports.component';
 import { RestaurantLoginComponent } from './components/restaurant/restaurant-login/restaurant-login.component';
 import { RegisterRestaurantComponent } from './components/restaurant/register-restaurant/register-restaurant.component';
+import { HomeRestaurantComponent } from './components/restaurant/home-restaurant/home-restaurant.component';
+import { ProductsComponent } from './components/restaurant/products/products.component';
+import { ViewProductComponent } from './components/restaurant/view-product/view-product.component';
+import { EditProductComponent } from './components/restaurant/edit-product/edit-product.component';
+import { NewProductComponent } from './components/restaurant/new-product/new-product.component';
+
 
 
 const routes: Routes = [
@@ -41,6 +47,11 @@ const routes: Routes = [
   {path:'restaurantReports',component:RestaurantReportsComponent},
   {path:'loginRestaurant',component:RestaurantLoginComponent},
   {path:'restaurantRegister',component:RegisterRestaurantComponent},
+  {path:'homeRestaurant',component:HomeRestaurantComponent},
+  {path:'products',component:ProductsComponent},
+  {path:'viewProduct/:id',component:ViewProductComponent},
+  {path:'editProduct/:id',component:EditProductComponent},
+  {path:'newProduct',component:NewProductComponent},
 ];
 
 @NgModule({
@@ -51,4 +62,5 @@ export class AppRoutingModule { }
 export const routingComponents = [LoginAdminComponent, HomeAdminComponent,EmployeesComponent,ViewEmployeeComponent,
   EditEmployeeComponent,NewEmployeeComponent,RestaurantsComponent,ViewRestaurantComponent,EditRestaurantComponent,
   NewRestaurantComponent,AffiliationsComponent,DriversComponent,ViewDriverComponent,EditDriverComponent,
-  NewDriverComponent,ClientReportsComponent,RestaurantReportsComponent,RestaurantLoginComponent,RegisterRestaurantComponent]
+  NewDriverComponent,ClientReportsComponent,RestaurantReportsComponent,RestaurantLoginComponent,RegisterRestaurantComponent,
+  HomeRestaurantComponent,ProductsComponent,ViewProductComponent,EditProductComponent,NewProductComponent]

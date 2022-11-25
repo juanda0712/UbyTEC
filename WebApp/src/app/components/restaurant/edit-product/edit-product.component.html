@@ -1,0 +1,61 @@
+<app-header></app-header> <br /><br />
+<div class="container">
+  <form [formGroup]="editForm" (ngSubmit)="putForm(editForm.value)">
+    <div class="form-group row">
+      <div class="col">
+        <label for="exampleFormControlInput1">Nombre Producto</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Nombre Producto"
+          formControlName="Product_name"
+        />
+      </div>
+      <div class="col">
+        <label for="exampleFormControlInput1">ID</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="ID"
+          formControlName="ID"
+        />
+      </div>
+    </div>
+    <br /><br />
+    <div class="form-group row">
+      <div class="col">
+        <label for="exampleFormControlInput1">Categoria</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Categoria"
+          formControlName="Category"
+        />
+      </div>
+      <div class="col">
+        <label for="exampleFormControlInput1">Precio</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Precio"
+          formControlName="Price"
+        />
+      </div>
+    </div>
+    <br /><br />
+    <div class="form-group row">
+      <div class="col">
+        <label for="exampleFormControlInput1">Imagen</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Imagen"
+          formControlName="Image"
+        />
+      </div>
+    </div>
+    <br /><br />
+    <button type="submit" class="btn btn-primary">Actualizar</button>
+    <button type="button" class="btn btn-dark" (click)="exit()">Salir</button>
+  </form>
+</div>

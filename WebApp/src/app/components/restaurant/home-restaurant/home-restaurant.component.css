@@ -1,0 +1,13 @@
+.cardBackground{
+    width: 20rem;
+    background-color: #E0932E;
+}
+
+.button{
+    background-color: #e3f2fd;
+}
+.button:active {
+    background-color: #ffffff;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }

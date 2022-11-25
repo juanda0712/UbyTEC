@@ -10,13 +10,11 @@ import { HeaderComponent } from './templates/header/header.component';
 import { SumPipeModule } from './pipe/sum.pipe';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     routingComponents,
-  
   ],
   imports: [
     BrowserModule,

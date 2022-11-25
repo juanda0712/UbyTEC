@@ -34,18 +34,20 @@ export class RestaurantLoginComponent implements OnInit {
   }
 
   onLogin(form:LoginI){
+    
     this.api.login(form,'loginRestaurant').subscribe(data => {
       this.loginResponse = data;
       if(this.loginResponse.status == "ok"){
         this.userInfo = this.loginResponse.result;
         localStorage.setItem("token", this.userInfo.ID);
-        localStorage.setItem("user", "owner");
+        localStorage.setItem("user", "restaurant");
         this.router.navigate(['homeRestaurant']);
       }else{
         this.errorStatus= true;
         this.errorMsj = "Credenciales invalidas";
       }
     })
+    
   }
 
 }
